@@ -1,0 +1,192 @@
+/*importa font do google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+/*--*/
+
+/*esta e uma pseudo classe responsavel por criar variaveis globais dentro do escopo do codigo*/
+:root{
+    --cor-primaria: #000000;
+    --cor-secundaria: #f6f6f6;
+    --cor-terciaria: #22D4FD;
+    --cor-houver: #272727;
+    --cor-responsividade: #040D12;
+
+    --fonte-primaria: 'Krona one', sans-serif;
+    --fonte-secundaria: 'Montserrat', sans-serif;
+}
+
+*{  /* a classe "*" e utilizada para realiza o setting de todos os elementos/tags dentro do HTML*/
+    /* esta classe realiza o box-sizing dos componentes do HTML redefinindo os padroes base dos elementos margin, border e padding*/
+    margin: 0;
+    padding: 0;
+}
+
+strong{
+    color: lightblue;
+}
+
+body{
+    /*height: 100vh; determina que a tag body tera 100% da tela/display com base no viewport (ou seja a tag body tera o tamanho total da tela em questao)*/
+    box-sizing: border-box; /*garante que todos os elementos filhos nao saiam de dentro do elemento pai garantindo seu redimencionamento sem quebra de bordas*/
+    /*background-color: black; codigo subistituido por variavel*/
+    background-color: var(--cor-primaria);
+    /*color: #f6f6f6; codigo subistituido por variavel*/
+    color: var(--cor-secundaria);
+}
+
+.cabecalho{
+    /* padding-top: 2%;
+    padding-left: 15%; */
+    padding: 2% 0% 0% 15%; /*valores: superior, direito, inferior e esquerdo*/
+}
+
+.cabecalho__menu{
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho__menu__link{
+    /*font-family: 'Montserrat', sans-serif; codigo subistituido por variavel*/
+    font-family: var(--fonte-secundaria);
+    font-weight: 400;
+    /*font-size: 24px; 24%16 = 1.5*/
+    font-size: 1.5rem;
+    /*color: #22d4fd; codigo subistituido por variavel*/
+    color: var(--cor-terciaria);
+    text-decoration: none;
+}
+
+.apresentacao{
+    /*margin: 10% 15%; /*define tamanho da margem para os elementos dentro da tag que possui a classe em questao*/
+    padding: 5% 15%; /*define tamanho da margem para os elementos dentro da tag que possui a classe em questao*/
+    display: flex; /*determina o flexbox do display na tag selecionada pela class em questao*/
+    align-items: center; /*determina o tipo de alinhamento do flexbox*/
+    justify-content: space-between; /*coloca espaco entre os elementos filhos dentro da tag que possui a classe em questao*/
+    gap: 82px;
+}
+
+.apresentacao__conteudo{
+    /*width: 615px;  substituido por % para criar responsividade*/
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.apresentacao__conteudo__titulo{
+    /*font-size: 36px;*/
+    font-size: 2.25rem;
+    /*font-family: 'Krona one', sans-serif; codigo subistituido por variavel*/
+    font-family: var(--fonte-primaria);
+}
+
+.titulo-destaque{
+    /*color: #22d4fd; codigo subistituido por variavel*/
+    color: var(--cor-terciaria);
+}
+
+.apresentacao__conteudo__texto{
+    /*font-size: 24px;*/
+    font-size: 1.5rem;
+    /*font-family: 'Montserrat', sans-serif; codigo subistituido por variavel*/
+    font-family: var(--fonte-secundaria);
+    font-weight: 400;
+}
+
+.apresentacao__links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.apresentacao__links__subtitulo{
+    /*font-family: 'Krona one', sans-serif; codigo subistituido por variavel*/
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    /*font-size: 24px;*/
+    font-size: 1.5rem;
+}
+
+.apresentacao__links__navegacao{
+    /* background-color: #22d4fd; */
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    /*width: 378px; codigo substituido por % para ter responsividade*/
+    width: 50%;
+    /* text-align: center; */
+    border-radius: 8px;
+    border: 2px solid #22d4fd;
+    /* border-width: 2px; */
+    /* border-style: solid; */
+    /* border-color: #22d4fd; */
+    /*font-size: 24px;*/
+    font-size: 1.5rem;
+    padding: 16px 0;
+    text-decoration: none;
+    /*color: #f6f6f6; codigo subistituido por variavel*/
+    color: var(--cor-secundaria);
+    /*font-family: 'Montserrat', sans-serif; codigo subistituido por variavel*/
+    font-family: var(--fonte-secundaria);
+    font-weight: 600;
+}
+
+.apresentacao__links__navegacao:hover {
+    /*background-color: #272727; codigo subistituido por variavel*/
+    background-color: var(--cor-houver);
+    /*font-size: 27px;*/
+    font-size: 1.7rem;
+    padding: 3%;
+    border-style: outset;
+    border-color: blue;
+    border-width: 4px;
+}
+
+/*desafio estilizacao de conteudo*/
+div:hover{  
+    color: blue;
+}
+
+.apresentacao__imagem{
+    width: 50%;
+}
+
+.rodape{
+    /*background-color: #22d4fd; codigo subistituido por variavel*/
+    background-color: var(--cor-terciaria);
+    /*font-family: 'Montserrat', sans-serif; codigo subistituido por variavel*/
+    font-family: var(--fonte-secundaria);
+    /*color: #000000; codigo subistituido por variavel*/
+    color: var(--cor-primaria);
+    font-weight: 400;
+    /*font-size: 24px;*/
+    font-size: 1.5rem;
+    padding: 24px;
+    text-align: center;
+}
+
+/**responsividade   */
+@media (max-width: 1200px) {/*telas de ate 1200px terao esta configuracao para garantir a responsividade*/
+    body{
+        background-color: var(--cor-responsividade); /*muda a cor do backgroud */
+    }
+    
+    .cabecalho{
+        padding: 10%;
+    }
+
+    .cabecalho__menu{
+        justify-content: center;
+    }
+    
+    .apresentacao{
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+
+    .apresentacao__conteudo{
+        width: auto; /* width: auto ou width:100% funcionam da mesma forma onde ocorrera o preenchimento da tela responsiva em 100%*/
+    }
+}
+/*--------   fim responsividade    ----*/
+
